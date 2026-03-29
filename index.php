@@ -1,3 +1,7 @@
+<?php
+    SESSION_START();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +12,9 @@
 </head>
 <body>
     <main>
+        <h1>Current user: <?php echo $_SESSION["username"] ?? "None"?></h1>
+
+
         <section>            
             <h1>Sign-up</h1>
             <form action="includes/formhandler.inc.php" method="post">
@@ -68,6 +75,19 @@
     
                 <button>Delete</button>
     
+            </form>
+        </section>
+
+        <hr>
+
+        <section>            
+            <h1>Search for User: </h1>
+            <form action="searchComments.php" method="post">
+                <div>
+                    <label for="username">Username: </label>
+                    <input type="text" name="username" id="username" placeholder="Enter username">
+                </div>    
+                <button>Search</button>
             </form>
         </section>
         
